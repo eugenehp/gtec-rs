@@ -1,6 +1,6 @@
 [package]
 name = "gtec"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2021"
 description = "Rust library and TUI for g.tec Unicorn Hybrid Black 8-channel EEG headset via the Unicorn C API (runtime-loaded)"
 keywords = ["eeg", "gtec", "unicorn", "bci", "bluetooth"]
