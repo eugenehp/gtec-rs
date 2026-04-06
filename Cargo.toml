@@ -1,0 +1,60 @@
+[package]
+name = "gtec"
+version = "0.0.1"
+edition = "2021"
+description = "Rust library and TUI for g.tec Unicorn Hybrid Black 8-channel EEG headset via the Unicorn C API (runtime-loaded)"
+keywords = ["eeg", "gtec", "unicorn", "bci", "bluetooth"]
+authors = ["Eugene Hauptmann"]
+license-file = "LICENSE"
+homepage = "https://github.com/eugenehp/gtec-rs"
+repository = "https://github.com/eugenehp/gtec-rs"
+documentation = "https://docs.rs/gtec"
+readme = "README.md"
+
+[features]
+default = ["tui", "ble"]
+ble = [
+    "dep:btleplug",
+    "dep:tokio",
+    "dep:uuid",
+]
+tui = [
+    "dep:ratatui",
+    "dep:crossterm",
+]
+
+[lib]
+name = "gtec"
+path = "src/lib.rs"
+
+[[bin]]
+name = "gtec"
+path = "src/main.rs"
+
+[[bin]]
+name = "gtec-tui"
+path = "src/bin/tui.rs"
+required-features = ["tui"]
+
+[dependencies]
+# Dynamic loading of the Unicorn shared library at runtime
+libloading = "0.8"
+
+# Error handling
+thiserror = "2"
+
+# Logging
+log = "0.4"
+env_logger = "0.11"
+
+# OS-level sandboxing
+libc = "0.2"
+
+# Pure-Rust BLE for BCI Core-8 (optional, enables Linux support)
+btleplug = { version = "0.12", optional = true }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time", "sync"], optional = true }
+uuid = { version = "1", optional = true }
+
+# TUI (optional)
+ratatui = { version = "0.30", features = ["crossterm"], optional = true }
+crossterm = { version = "0.29", optional = true }

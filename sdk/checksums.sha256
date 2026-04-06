@@ -1,0 +1,14 @@
+# Unicorn native library checksums
+# Pinned from official unicorn-bi GitHub repositories
+# Last verified: 2026-04-06
+#
+# Unicorn-Hybrid-Black-Windows-APIs commit 954696046936 (2024-07-08)
+# Unicorn-Suite-Hybrid-Black        commit ec8d9ce82dd9 (2023-04-21)
+#
+# Unicorn C API (Hybrid Black)
+59d997aa6595a4d35f81730365bdd16eacea14fc86d1f2b33fdd64e535a1b30f  Unicorn.dll
+75df760af1a58c76098cf3d12a9f5184869e705d296a9687ed7bce6124cd1a3c  libunicorn.so
+#
+# gtec-ble BLE API (BCI Core-8) — from PyPI gtec-ble v2.0.1
+0e0265d33e598622fe282ffd8eaf36d4bb668e80a1b5644cfec30b7710941a4f  libgtecble.dylib
+dff2a56949200fb225644905fcf65b2a6ddbf5bfd5c8bf90130f824b06cfdd3e  libgtecble.dll
